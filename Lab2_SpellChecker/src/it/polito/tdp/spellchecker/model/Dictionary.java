@@ -20,14 +20,19 @@ public class Dictionary {
 	public List<RichWord> spellCheckText(List<String> inputTextList){
 
 		List<RichWord> list = new LinkedList<RichWord>();
-		/*
+		
 		boolean corretto = false;
 		for(String stemp : inputTextList){
 			if(dizionario.contains(stemp))
 				corretto = true;
+			else
+				corretto = false;
 			list.add(new RichWord (stemp, corretto));
 		}
-		 */
+		 
+		
+		
+		/*
 		int inizio = 0;
 		int fine = dizionario.size();
 		
@@ -49,9 +54,9 @@ public class Dictionary {
 
 
 
+		
 
-
-			/*	
+				
 
 			if(stemp.compareTo(dizionario.get(medio)) == 0)
 				corretto = true;
@@ -72,10 +77,11 @@ public class Dictionary {
 					}		
 				}
 			}
-			 */			
+			 	
+		
 			list.add(new RichWord (stemp, corretto));
 		}
-
+	*/
 		return list;
 
 	}

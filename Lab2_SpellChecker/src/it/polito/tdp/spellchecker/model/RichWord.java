@@ -15,6 +15,17 @@ public class RichWord {
 	public void setTrovata(boolean trovata) {
 		this.trovata = trovata;
 	}
+	
+	
+
+	public boolean isTrovata() {
+		return trovata;
+	}
+
+	
+	public String getStringa() {
+		return stringa;
+	}
 
 
 	@Override
