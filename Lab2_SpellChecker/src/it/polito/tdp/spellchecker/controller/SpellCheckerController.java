@@ -72,8 +72,7 @@ public class SpellCheckerController {
     	String testo = txtA1.getText();
     	String paroleErrate = "";
     	
-    	  //String replace = testo.replaceAll(".","");
-         // String replace1 = replace.replaceAll(",","");
+    	  
           List<String> lista = new ArrayList<String>(Arrays.asList(testo.split(" ")));
           d1.loadDictionary();
           d2.loadDictionary();

@@ -20,7 +20,7 @@ public class Dictionary {
 	public List<RichWord> spellCheckText(List<String> inputTextList){
 
 		List<RichWord> list = new LinkedList<RichWord>();
-		
+		/*
 		boolean corretto = false;
 		for(String stemp : inputTextList){
 			if(dizionario.contains(stemp))
@@ -29,10 +29,10 @@ public class Dictionary {
 				corretto = false;
 			list.add(new RichWord (stemp, corretto));
 		}
-		 
+		 */
 		
 		
-		/*
+		
 		int inizio = 0;
 		int fine = dizionario.size();
 		
@@ -40,48 +40,21 @@ public class Dictionary {
 		for (String stemp: inputTextList){
 			
 			while (inizio!=fine){
-				int medio = (fine - inizio)/2;
-				System.out.println(inizio + " " + medio+ " "+ fine);
-				if (stemp.compareTo(dizionario.get(medio))==0){
+				int medio =inizio + (fine - inizio)/2;
+				//System.out.println(inizio + " " + medio+ " "+ fine);
+				if (stemp.compareToIgnoreCase(dizionario.get(medio).replaceAll("[^a-zA-Z]", ""))==0){
 					corretto=true;
 					break;
-				} else if (stemp.compareTo(dizionario.get(medio))>0){
-					inizio=medio;
+				} else if (stemp.compareToIgnoreCase(dizionario.get(medio).replaceAll("[^a-zA-Z]", ""))>0){
+					inizio=medio + 1;
 				} else {
 					fine=medio;
 				}
 			}
 
-
-
-		
-
-				
-
-			if(stemp.compareTo(dizionario.get(medio)) == 0)
-				corretto = true;
-
-			else if(stemp.compareTo(dizionario.get(medio)) > 0){
-				for(int i = medio + 1; i < dizionario.size(); i ++){
-					if(stemp.compareTo(dizionario.get(i)) == 0){
-						corretto = true;
-						break;
-					}		
-				}
-			}
-			else {
-				for(int i = 0; i < medio; i ++){
-					if(stemp.compareTo(dizionario.get(i)) == 0){
-						corretto = true;
-						break;
-					}		
-				}
-			}
-			 	
-		
 			list.add(new RichWord (stemp, corretto));
 		}
-	*/
+	
 		return list;
 
 	}
